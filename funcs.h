@@ -5,9 +5,9 @@
 template <class T>
 class MyVector {
 private:
-  int cap = 128;
-  T *data = new T[cap];
-  int storage;
+  int cap = 128; //initial capacity
+  T *data = new T[cap]; //initialized dynamic array
+  int storage; // actual size of vector (# of elements)
 public:
   MyVector();
   int size();
@@ -17,7 +17,7 @@ public:
   void pop_back(int n);
   void pop_back();
   void clear();
-  void resize(int renew);
+  void resize(int renew); // used to update capacity
   T &operator[] (int n);
 };
 

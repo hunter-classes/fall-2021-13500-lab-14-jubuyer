@@ -24,3 +24,12 @@ void MyVector<T>::resize(int renew) {
   T *arr = new T[renew];
   data = arr;
 }
+
+template <class T>
+bool MyVector<T>::empty() {
+  if (storage > 0) {
+    return false;
+  }
+
+  return true;
+}
