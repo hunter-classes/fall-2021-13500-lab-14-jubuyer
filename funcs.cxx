@@ -24,7 +24,7 @@ T &MyVector<T>::operator[] (int n) {
 template <class T>
 void MyVector<T>::push_back(T item) {
   if (storage == cap) {
-    resize(cap*2);
+    resize(data, (cap*2));
   }
   data[storage] = item;
   storage++;
@@ -60,18 +60,19 @@ T MyVector<T>::pop_back(int n) {
 
   T *arr = new T[cap];
   T temp = data[n];
-  for(int i = 0; i < storage; i++) {
-    if(data[i] != data[n]) {
-      arr[i] = data[i];
-    }
+  for(int i = 0; i < n; i++) {
+    arr[i] = data[i];
+  }
+
+  for(int i = n; i < cap-1; i++) {
+    arr[i] = data[i+1];
   }
 
   delete[] data;
   data = arr;
-  
+  storage--;
   return temp;
 }
-
 
 template <class T>
 int MyVector<T>::size() {
@@ -84,11 +85,16 @@ int MyVector<T>::capacity() {
 }
 
 template <class T>
-void MyVector<T>::resize(int renew) {
+void MyVector<T>::resize(int* &original, int renew) {
   cap = renew;
+
   T *arr = new T[renew];
-  delete[] data;
-  data = arr;
+  for (int i = 0; i < cap; i ++) {
+    arr[i] = original[i];
+  }
+
+  delete [] original;
+  original = arr;
 }
 
 template <class T>
@@ -98,4 +104,16 @@ bool MyVector<T>::empty() {
   }
 
   return true;
+}
+
+template <class T>
+void MyVector<T>::clear() {
+  T *arr = new T[cap];
+  for (int i = 0; i < cap; i ++) {
+    arr[i] = 0;
+  }
+
+  storage = 0;
+  delete [] data;
+  data = arr;
 }
