@@ -42,7 +42,7 @@ T MyVector<T>::pop_back() {
   }
   storage--;
   T temp = data[storage];
-  data[storage] = 0;
+  // data[storage] = 0; UNNECESSARY APPARENTLY (user cannot access old element)
 
   return temp;
 }
