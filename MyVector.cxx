@@ -109,9 +109,10 @@ bool MyVector<T>::empty() {
 template <class T>
 void MyVector<T>::clear() {
   T *arr = new T[cap];
-  for (int i = 0; i < cap; i ++) {
-    arr[i] = 0;
-  }
+  // UNNECESSARY (again) pre-initializes to 0 anyway
+  // for (int i = 0; i < cap; i ++) {
+  //   arr[i] = 0;
+  // }
 
   storage = 0;
   delete [] data;
