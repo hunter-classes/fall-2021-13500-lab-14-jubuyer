@@ -14,8 +14,8 @@ public:
   int capacity();
   bool empty();
   void push_back(T item);
-  void pop_back(int n);
-  void pop_back();
+  T pop_back(int n);
+  T pop_back();
   void clear();
   void resize(int renew); // used to update capacity
   T &operator[] (int n);
