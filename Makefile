@@ -6,10 +6,10 @@ CFLAGS = -std=c++11 #-Wall
 main: main.o
 	$(CC) $(CFLAGS) -o $@ $^
 
-tests: tests.o funcs.o
+tests: tests.o
 	$(CC) $(CFLAGS) -o $@ $^
 
-main.o: main.cpp funcs.h funcs.cxx
+main.o: main.cpp MyVector.h MyVector.cxx
 	$(CC) $(CFLAGS) -c $<
 
 tests.o: tests.cpp doctest.h
