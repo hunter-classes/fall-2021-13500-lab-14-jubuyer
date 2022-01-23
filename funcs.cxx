@@ -24,7 +24,7 @@ T &MyVector<T>::operator[] (int n) {
 template <class T>
 void MyVector<T>::push_back(T item) {
   if (storage == cap) {
-    resize(data, (cap*2));
+    resize(cap*2);
   }
   data[storage] = item;
   storage++;
@@ -85,16 +85,16 @@ int MyVector<T>::capacity() {
 }
 
 template <class T>
-void MyVector<T>::resize(int* &original, int renew) {
+void MyVector<T>::resize(int renew) {
   cap = renew;
 
   T *arr = new T[renew];
   for (int i = 0; i < cap; i ++) {
-    arr[i] = original[i];
+    arr[i] = data[i];
   }
 
-  delete [] original;
-  original = arr;
+  delete [] data;
+  data = arr;
 }
 
 template <class T>

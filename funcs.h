@@ -17,7 +17,7 @@ public:
   T pop_back(int n); //done
   T pop_back(); //done
   void clear(); //done
-  void resize(int* &arr, int renew); // used to update capacity (done)
+  void resize(int renew); // used to update capacity (done)
   T &operator[] (int n); //done
 };
 
