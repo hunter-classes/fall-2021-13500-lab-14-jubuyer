@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "funcs.h"
+#include "MyVector.h"
 
 template <class T>
 MyVector<T>::MyVector() {

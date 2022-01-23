@@ -21,4 +21,4 @@ public:
   T &operator[] (int n); //done
 };
 
-#include "funcs.cxx"
+#include "MyVector.cxx"

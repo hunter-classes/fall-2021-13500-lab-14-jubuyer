@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "funcs.h"
+#include "MyVector.h"
 
 int main(int argc, char const *argv[]) {
   std::cout << "testing lol" << '\n';
