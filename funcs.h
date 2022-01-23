@@ -9,16 +9,16 @@ private:
   T *data = new T[cap]; //initialized dynamic array
   int storage; // actual size of vector (# of elements)
 public:
-  MyVector();
-  int size();
-  int capacity();
-  bool empty();
-  void push_back(T item);
-  T pop_back(int n);
-  T pop_back();
-  void clear();
-  void resize(int* &arr, int renew); // used to update capacity
-  T &operator[] (int n);
+  MyVector(); //done
+  int size(); //done
+  int capacity(); //done
+  bool empty(); //done
+  void push_back(T item); //done
+  T pop_back(int n); //done
+  T pop_back(); //done
+  void clear(); //done
+  void resize(int* &arr, int renew); // used to update capacity (done)
+  T &operator[] (int n); //done
 };
 
 #include "funcs.cxx"
