@@ -88,5 +88,29 @@ int main(int argc, char const *argv[]) {
     std::cout << vect[i] << '\t';
   }
 
+  std::cout << "\ntesting different types lol" << '\n';
+  std::cout << "myvector w/ strings" << '\n';
+  MyVector<std::string> arr;
+  arr.push_back("yo");
+  for(int i = 0; i < 10; i++) {
+    arr.push_back("im stuck in a loop dawg");
+  }
+
+  for(int i = 0; i < arr.size(); i++) {
+    std::cout << arr[i] << '\n';
+  }
+
+  std::cout << "\nmyvector w/ chars" << '\n';
+  MyVector<char> test;
+  test.push_back('a');
+  test.push_back('c');
+  test.push_back('d');
+  test.push_back('!');
+
+  for(int i = 0; i < test.size(); i++) {
+    std::cout << test[i] << '\t';
+  }
+  std::cout << '\n';
+
   return 0;
 }
