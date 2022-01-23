@@ -8,6 +8,7 @@ private:
   int cap = 128; //initial capacity
   T *data = new T[cap]; //initialized dynamic array
   int storage; // actual size of vector (# of elements)
+  void resize(int renew); // used to update capacity (done)
 public:
   MyVector(); //done
   int size(); //done
@@ -17,7 +18,6 @@ public:
   T pop_back(int n); //done
   T pop_back(); //done
   void clear(); //done
-  void resize(int renew); // used to update capacity (done)
   T &operator[] (int n); //done
 };
 
